@@ -16,6 +16,17 @@ Example:
 ```bash
 docker run -it \
   --name h-at-home \
+  -p 443:443 \
+  -v /path/to/data:/app/data \
+  ghcr.io/pythoncoderas/h-at-home-docker
+```
+
+If you are using a port other than 443, change both sides of the `-p` flag accordingly. For example, if you want to use port 8080, you would do:
+
+```bash
+docker run -it \
+  --name h-at-home \
+  -p 8080:8080 \
   -v /path/to/data:/app/data \
   ghcr.io/pythoncoderas/h-at-home-docker
 ```
@@ -43,6 +54,9 @@ services:
   h-at-home:
     image: ghcr.io/pythoncoderas/h-at-home-docker
     container_name: h-at-home
+    ports:
+      - "443:443"
+    restart: unless-stopped
     volumes:
       - /path/to/data:/app/data
 ```
