@@ -67,6 +67,8 @@ jobs:
           provenance: true
           sbom: true
           outputs: "type=image,name=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }},push-by-digest=true,name-canonical=true,push=true"
+          build-args: |
+            VERSION=${{ github.ref_name }}
 
       - name: Export digest
         run: |
