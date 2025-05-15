@@ -2,7 +2,6 @@ name: Docker
 
 on:
   push:
-    branches: ["master"]
     tags: ["*.*.*"]
   workflow_dispatch:
 
@@ -68,7 +67,7 @@ jobs:
           sbom: true
           outputs: "type=image,name=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }},push-by-digest=true,name-canonical=true,push=true"
           build-args: |
-            VERSION=${{ github.ref_name }}
+            VERSION=${{ github.event.type }}
 
       - name: Export digest
         run: |
