@@ -5,7 +5,7 @@ Docker Image for e-h's H@H
 ## Tags
 
 - `1.6.4`, `1.6`, `1`, `latest`: H@H version 1.6.4
-- `1.6.3`, `1.6.3`: H@H version 1.6.3
+- `1.6.3`: H@H version 1.6.3
 
 ## Setup
 
