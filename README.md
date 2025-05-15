@@ -17,7 +17,7 @@ Example:
 docker run -it \
   --name h-at-home \
   -v /path/to/data:/app/data \
-  pythoncoderas/h-at-home-docker
+  ghcr.io/pythoncoderas/h-at-home-docker
 ```
 
 If you want to run the container in the background (non-interactive), you can either run it in the interactive mode once (to login) and then use `-d` instead of `-it` in the subsequent runs, or you can pre-make the login file. In order to do that:
@@ -41,7 +41,7 @@ Docker compose (assuming you made the login file as above):
 version: '3'
 services:
   h-at-home:
-    image: pythoncoderas/h-at-home-docker
+    image: ghcr.io/pythoncoderas/h-at-home-docker
     container_name: h-at-home
     volumes:
       - /path/to/data:/app/data
