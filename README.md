@@ -41,7 +41,7 @@ Docker compose (assuming you made the login file as above):
 version: '3'
 services:
   h-at-home:
-    image: pythoncoderas/h-at-home
+    image: pythoncoderas/h-at-home-docker
     container_name: h-at-home
     volumes:
       - /path/to/data:/app/data
